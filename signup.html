@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Landlady of Lagos | Premium Real Estate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0c9756;
+      --secondary: #1a2e35;
+      --accent: #e6b412;
+      --light: #F8F9FA;
+      --dark: #0E2E50;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    body {
+      background-color: var(--light);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+    }
+
+    .form-section {
+      width: 50%;
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .image-section {
+      width: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pattern-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.1) 2px, transparent 2px);
+      background-size: 20px 20px;
+    }
+
+    .image-content {
+      z-index: 1;
+      text-align: center;
+      color: white;
+      padding: 0 30px;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .logo span:first-child {
+      color: white;
+    }
+
+    .logo span:last-child {
+      color: var(--accent);
+    }
+
+    .image-content h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .image-content p {
+      font-size: 16px;
+      line-height: 1.6;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
+    .form-header {
+      margin-bottom: 40px;
+    }
+
+    .form-header h1 {
+      font-size: 32px;
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+
+    .form-header p {
+      color: #777;
+      font-size: 16px;
+    }
+
+    .input-group {
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #444;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: all 0.3s;
+    }
+
+    .input-group input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(12, 151, 86, 0.1);
+      outline: none;
+    }
+
+    .password-requirements {
+      font-size: 12px;
+      color: #777;
+      margin-top: 5px;
+    }
+
+    .btn-signup {
+      width: 100%;
+      padding: 15px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-bottom: 20px;
+    }
+
+    .btn-signup:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(26, 46, 53, 0.2);
+    }
+
+    .login-link {
+      text-align: center;
+      color: #666;
+      font-size: 15px;
+    }
+
+    .login-link a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+
+    .home-btn {
+      cursor: pointer;
+      width: 50%;
+      padding: 15px;
+      border-radius: 10px;
+      border: none;
+      color: var(--secondary);
+      background-color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.3s;
+    }
+
+    .home-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(230, 180, 18, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .form-section,
+      .image-section {
+        width: 100%;
+      }
+
+      .image-section {
+        order: -1;
+        padding: 40px 20px;
+      }
+
+      .form-section {
+        padding: 40px 30px;
+      }
+    }
+    
+    /* Premium Loader Styles */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      transition: opacity 0.5s ease;
+    }
+
+    .loader-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: var(--primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .loader-logo::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      animation: shine 2s infinite;
+    }
+
+    @keyframes shine {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .loader-progress {
+      width: 300px;
+      height: 8px;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .loader-progress-bar {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      animation: progress 2s ease-in-out infinite;
+      border-radius: 4px;
+    }
+
+    @keyframes progress {
+      0% { width: 0; }
+      50% { width: 100%; }
+      100% { width: 0; transform: translateX(100%); }
+    }
+
+    .loader-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 1rem;
+      opacity: 0;
+      animation: fadeInOut 3s infinite;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+    <!-- Premium Loader -->
+    <div id="loader">
+      <div class="loader-logo">Landlady of Lagos</div>
+      <div class="loader-progress">
+        <div class="loader-progress-bar"></div>
+      </div>
+      <div class="loader-subtitle">Connecting You to Luxury</div>
+    </div>
+  
+  <div class="container">
+    <div class="form-section">
+      <div class="form-header">
+        <h1>Create Your Account</h1>
+        <p>Join Landlady of Lagos to access premium properties</p>
+      </div>
+
+      <form id="registrationForm">
+        <div class="input-group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="input-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+          <div class="password-requirements">
+            Password must be at least 8 characters with letters, numbers, and symbols.
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm_password" placeholder="Repeat your password" required>
+        </div>
+
+        <button type="submit" class="btn-signup">Create Account</button>
+
+        <div class="login-link">
+          Already have an account? <a href="signin.html">Sign In</a>
+        </div>
+      </form>
+    </div>
+
+    <div class="image-section">
+      <div class="pattern-overlay"></div>
+      <div class="image-content">
+        <div class="logo">
+          <span>Landlady</span> <span>of Lagos</span>
+        </div>
+        <h2>Your Luxury Property Journey Begins</h2>
+        <p>Register now to explore exclusive high-end properties in Lagos' most prestigious neighborhoods.</p>
+        <a href="index.html">
+          <button class="home-btn">Back To Home</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simulate loading delay
+    setTimeout(() => {
+      const loader = document.getElementById('loader');
+      const container = document.querySelector('.container');
+
+      // Fade out loader
+      loader.style.opacity = '0';
+
+      // Fade in container
+      container.style.opacity = '1';
+
+      // Remove loader from DOM after fade-out
+      setTimeout(() => {
+        loader.remove();
+      }, 500); // Match the transition duration
+    }, 3000); // 3 seconds delay for the loader
+  </script>
+</body>
+</html>

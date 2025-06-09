@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>About Us | Your Landlady NG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Lagos real estate, property management, luxury homes, Nigeria properties">
+    <meta name="description" content="Learn about Your Landlady NG - Your trusted partner in premium property solutions">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Premium About Page Styles -->
+    <style>
+        :root {
+            --primary-color: #1a4d4d;
+            --secondary-color: #c4ff00;
+            --accent-color: #e6b412;
+            --text-color: #333333;
+            --light-bg: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+        
+        .bg-primary {
+            background-color: var(--primary-color) !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        /* Premium Loader Styles */
+        #spinner {
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 9999;
+        }
+        
+        .loader-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        .loader-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .loader-logo::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            animation: shine 2s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .loader-progress {
+            width: 300px;
+            height: 8px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        
+        .loader-progress-bar {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            animation: progress 2s ease-in-out infinite;
+            border-radius: 4px;
+        }
+        
+        @keyframes progress {
+            0% { width: 0; }
+            50% { width: 100%; }
+            100% { width: 0; transform: translateX(100%); }
+        }
+        
+        .loader-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 1rem;
+            opacity: 0;
+            animation: fadeInOut 3s infinite;
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        
+        /* Enhanced Navbar */
+        .nav-bar {
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-bar.scrolled {
+            background-color: white !important;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-light .navbar-nav .nav-link {
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            position: relative;
+        }
+        
+        .navbar-light .navbar-nav .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .navbar-light .navbar-nav .nav-link:hover::before,
+        .navbar-light .navbar-nav .nav-link.active::before {
+            width: 100%;
+        }
+        
+        /* About Header */
+        .about-header {
+            background: linear-gradient(rgba(26, 46, 53, 0.7), rgba(26, 46, 53, 0.7)), url('img/b3q.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 8rem 0;
+        }
+        
+        /* About Section */
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            transition: transform 0.5s ease;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.03);
+        }
+        
+        /* Footer Enhancements */
+        .footer {
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-logo a {
+            font-family: 'Playfair Display', serif;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-logo a:hover {
+            opacity: 0.8;
+        }
+        
+        .main-menu2 ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+        
+        .main-menu2 ul li a:hover {
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* Property Slider Styles */
+        .property-slider {
+            position: relative;
+        }
+        
+        .property-item {
+            padding: 10px;
+        }
+        
+        .property-item img {
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            height: 300px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .property-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .owl-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        
+        .owl-prev, .owl-next {
+            background: var(--primary-color) !important;
+            color: white !important;
+            width: 40px;
+            height: 40px;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .owl-prev:hover, .owl-next:hover {
+            background: var(--secondary-color) !important;
+        }
+        
+        /* Marquee Slider Styles */
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background: #f8f9fa;
+            padding: 20px 0;
+        }
+        
+        .marquee {
+            display: flex;
+            animation: marquee 30s linear infinite;
+            width: fit-content;
+        }
+        
+        .marquee:hover {
+            animation-play-state: paused;
+        }
+        
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .property-item {
+            padding: 10px;
+            flex: 0 0 auto;
+            width: 300px;
+        }
+        
+        .property-item img {
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .property-item:hover img {
+            transform: scale(1.05);
+        }
+        #uni{
+            height: 200px;
+            object-fit: cover;
+            object-position: top;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Premium Loader Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="loader-wrapper">
+                <div class="loader-logo">Landlady of Lagos</div>
+                <div class="loader-progress">
+                    <div class="loader-progress-bar"></div>
+                </div>
+                <div class="loader-subtitle">Connecting You to Luxury</div>
+            </div>
+        </div>
+        <!-- Premium Loader End -->
+
+
+              <!-- Navbar Start -->
+              <div class="container-fluid nav-bar bg-transparent">
+                <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+                    <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
+                        <div class="icon p-2 me-2">
+                            <img class="img-fluid" src="img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
+                        </div>
+                        <h1 class="m-0" style="color: #1a4d3a"><span style="color: var(--lime-bright);">Landlady</span> of Lagos</h1>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" title="Toggle navigation menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto">
+                            <a href="index.html" class="nav-item nav-link">Home</a>
+                            <a href="about.html" class="nav-item nav-link active">About</a>
+                            <a href="properties.html" class="nav-item nav-link">Properties</a>
+                            <a href="workwithme.html" class="nav-item nav-link">Work With Me</a>
+                            <a href="testimonials.html" class="nav-item nav-link">Testimonials</a>
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- Navbar End -->
+
+
+        <!-- Header Start -->
+        <div class="container-fluid about-header p-0">
+            <div class="container py-5">
+                <div class="row py-5">
+                    <div class="col-12 text-center">
+                        <h1 class="display-4 text-white mb-4 animated fadeIn">About Us</h1>
+                        <nav aria-label="breadcrumb animated fadeIn">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="index.html" style="color: var(--lime-bright);">Home</a></li>
+                                <li class="breadcrumb-item text-white active" aria-current="page">About</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+         <hr>
+
+
+
+        <!-- About Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                            <img class="img-fluid w-100" src="img/pic1.jpg" alt="Jessica George - Your Landlady NG">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <h4 class="mb-4">Your Next Big Move Deserves Real Strategy — Let's Make It Happen</h4>
+                        <h1 class="mb-4">At Your Landlady NG</h1>
+                        <p class="mb-4">
+                            We work with ambitious buyers, sellers, and investors to simplify property decisions, avoid costly mistakes, and create lasting value — all with a clear plan and personal support.
+                        </p>
+                        
+                        <h5 class="mb-3">💼 What Working with Your Landlady NG Looks Like</h5>
+                        <p><i class="fa fa-check text-primary me-3"></i><b>Finding Homes & Investments That Make Sense</b><br>
+                        Not all listings are worth your time. I connect you with verified, promising properties that match your budget, lifestyle, or long-term financial goals.</p>
+                        
+                        <p><i class="fa fa-check text-primary me-3"></i><b>Providing Clear, Honest Real Estate Advice</b><br>
+                        Whether you're just starting out or ready to grow your portfolio, I offer straightforward guidance to help you make confident, informed decisions.</p>
+                        
+                        <p><i class="fa fa-check text-primary me-3"></i><b>Buying and Selling Without Stress</b><br>
+                        From negotiation to paperwork, I'll walk you through each step — making the buying or selling process easier, faster, and smarter.</p>
+                        
+                        <p><i class="fa fa-check text-primary me-3"></i><b>Helping you explore Secure Investment Opportunities</b><br>
+                        Want your money to grow? I give you access to pre-screened property deals with real potential — and I'll help you understand the risks and returns.</p>
+
+                    <a href="" class="btn btn-outline py-3 px-5 animated fadeIn" style="color:var(--lime-bright);background-color:var(--dark)">Schedule Consultation</a>
+                </div>
+                </div>
+
+                 <!-- Image Slider Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <!-- <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 class="mb-4">Our Property Gallery</h2>
+                        <p class="mb-4">Explore our collection of premium properties across Lagos</p>
+                    </div>
+                </div> -->
+                <div class="marquee-container">
+                    <div class="marquee">
+                        <div class="property-item">
+                            <img class="img-fluid" id="uni" src="img/pic1.jpg" alt="Property Image">
+                        </div>
+                        <div class="property-item">
+                            <img class="img-fluid" id="uni" src="img/pic2.jpg" alt="Property Image">
+                        </div>
+                        <div class="property-item">
+                            <img class="img-fluid" src="img/pic5.jpg" alt="Property Image">
+                        </div>
+                        <div class="property-item">
+                            <img class="img-fluid" src="img/pic4.jpg" alt="Property Image">
+                        </div>
+                        <div class="property-item">
+                            <img class="img-fluid" src="img/pic5.jpg" alt="Property Image">
+                        </div>
+                        <!-- Duplicate items for seamless loop -->
+                        <div class="property-item">
+                            <img class="img-fluid" id="uni" src="img/pic1.jpg" alt="Property Image">
+                        </div>
+                        <div class="property-item">
+                            <img class="img-fluid" id="uni" src="img/pic2.jpg" alt="Property Image">
+                        </div>
+                        <div class="property-item">
+                            <img class="img-fluid" src="img/pic5.jpg" alt="Property Image">
+                        </div>
+                        <div class="property-item">
+                            <img class="img-fluid" src="img/pic4.jpg" alt="Property Image">
+                        </div>
+                        <div class="property-item">
+                            <img class="img-fluid" src="img/pic5.jpg" alt="Property Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Image Slider End -->
+
+                <!-- Jessica George Section -->
+                <div class="row g-5 align-items-center mt-5">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                        <h5 class="mb-3">Meet Jessica George — The Vision Behind Your Landlady NG</h5>
+                        <p class="mb-4">
+                            Jessica George isn't just another real estate consultant — she's the award-winning strategist behind Your Landlady NG, a brand trusted by homeowners, investors, and dreamers ready to secure their future through property.
+                        </p>
+                        <p class="mb-4">
+                            In 2021, Jessica took a bold step into real estate — not just to sell houses, but to rewrite the experience of property ownership. Since then, she's helped countless clients secure their first homes, expand their portfolios, and make profitable, stress-free real estate decisions in Nigeria's fast-paced market.
+                        </p>
+                        <p class="mb-4">
+                            Backed by over three years of hands-on experience and multiple industry awards, Jessica blends deep market knowledge with an intuitive understanding of what clients really need — security, value, and clarity. Whether you're buying your dream home or making your next big investment, she brings the kind of guidance that turns uncertainty into confidence.
+                        </p>
+                        <p class="mb-4">
+                            Through Your Landlady NG, Jessica has created more than a brand — she's built a movement rooted in trust, transparency, and results. Her mission is simple: to connect discerning clients with carefully vetted, high-potential properties — while making the journey seamless, strategic, and even enjoyable.
+                        </p>
+                        <p class="mb-4">
+                            Jessica's standout quality? She doesn't just close deals — she builds relationships, creates wealth pathways, and delivers peace of mind. Her clients don't just call her an expert. They call her the best decision they made.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                            <img class="img-fluid w-100" src="img/pic4.jpg" alt="Your Landlady NG Services">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+       
+
+ <!-- Footer Start -->
+ <div class="container-fluid text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s" style="background-color: var(--primary-color);">
+    <footer>
+        <div class="footer-wrappper">
+           <div class="footer-area footer-padding">
+               <div class="container">
+                   <div class="row">
+                       <div class="col-xl-12">
+                           <div class="single-footer-caption mb-50 text-center">
+                               <div class="footer-logo mb-25">
+                                   <a href="index.html" style="font-size: 2.5rem;font-weight:800;color:#ffffff;"><span style="color: var(--lime-bright);">Landlady</span> of Lagos</a>
+                               </div>
+                               <div class="main-menu2">
+                                   <nav>
+                                       <ul>
+                                           <li><a href="index.html">Home</a></li>
+                                           <li><a href="about.html">About</a></li>
+                                           <li><a href="properties.html">Properties</a></li>
+                                           <li><a href="team.html">Work With Me</a></li>
+                                           <li><a href="testimonials.html">Testimonials</a></li>
+                                           <li><a href="contact.html">Contact</a></li>
+                                       </ul>
+                                   </nav>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="footer-bottom-area">
+               <div class="container">
+                   <div class="footer-border">
+                       <div class="row d-flex align-items-center">
+                           <div class="col-xl-12 ">
+                               <div class="footer-copy-right text-center" >
+                                   <p style="color:var(--lime-bright)">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Landlady of Lagos. All Rights Reserved.</p>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </footer>
+</div>
+<!-- Footer End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg  btn-lg-square back-to-top" style="background:var(--secondary)"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script>
+        // Spinner function
+        var spinner = function () {
+            setTimeout(function () {
+                if ($('#spinner').length > 0) {
+                    $('#spinner').removeClass('show');
+                }
+            }, 2000);
+        };
+        spinner();
+        
+        // Navbar scroll effect
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 50) {
+                $('.nav-bar').addClass('scrolled');
+            } else {
+                $('.nav-bar').removeClass('scrolled');
+            }
+        });
+        
+        // Remove the previous Owl Carousel initialization
+        // $('.property-slider').owlCarousel({ ... });
+    </script>
+</body>
+
+</html>
