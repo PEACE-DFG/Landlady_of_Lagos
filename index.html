@@ -158,6 +158,25 @@
             background-color: white !important;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
+
+        .navbar-brand h1 span {
+            color: var(--lime-bright) !important;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .navbar-brand h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--lime-bright);
+            opacity: 0.7;
+        }
         
         .navbar-light .navbar-nav .nav-link {
             color: var(--text-color);
@@ -337,7 +356,7 @@
                     <div class="icon p-2 me-2">
                         <img class="img-fluid" src="img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
                     </div>
-                    <h1 class="m-0" style="color: #1a4d3a"><span style="color: var(--lime-bright);">Landlady</span> of Lagos</h1>
+                    <h1 class="m-0" style="color: #1a4d3a"><span style="color: var(--lime-bright); font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0px 0px 2px rgba(0,0,0,0.3), -1px -1px 2px rgba(255,255,255,0.3); border-bottom: 2px solid var(--lime-bright);">Landlady</span> of Lagos</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" title="Toggle navigation menu">
                     <span class="navbar-toggler-icon"></span>
@@ -624,7 +643,7 @@
                                                    <li><a href="index.html">Home</a></li>
                                                    <li><a href="about.html">About</a></li>
                                                    <li><a href="properties.html">Properties</a></li>
-                                                   <li><a href="team.html">Work With Me</a></li>
+                                                   <li><a href="workwithme.html">Work With Me</a></li>
                                                    <li><a href="testimonials.html">Testimonials</a></li>
                                                    <li><a href="contact.html">Contact</a></li>
                                                </ul>
